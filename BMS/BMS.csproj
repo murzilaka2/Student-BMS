@@ -1,0 +1,712 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\..\..\..\Леонид\documents\visual studio 2015\Projects\BMS\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\..\..\..\Леонид\documents\visual studio 2015\Projects\BMS\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\..\..\..\..\Леонид\documents\visual studio 2015\Projects\BMS\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\..\..\..\Леонид\documents\visual studio 2015\Projects\BMS\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D20642F6-F9D2-4DA1-A6BD-6351D6BC62F3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BMS</RootNamespace>
+    <AssemblyName>BMS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="404.html" />
+    <Content Include="forgot_password.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.eot%40" />
+    <Content Include="fonts\fontawesome-webfont.eot%40v=4.5.0" />
+    <Content Include="fonts\fontawesome-webfont.svg%40v=4.5.0" />
+    <Content Include="fonts\fontawesome-webfont.woff%40v=4.5.0" />
+    <Content Include="fonts\fontawesome-webfont.woff2%40v=4.5.0" />
+    <Content Include="fonts\materialdesignicons-webfont.eot%40" />
+    <Content Include="fonts\materialdesignicons-webfont.eot%40v=1.4.57" />
+    <Content Include="fonts\materialdesignicons-webfont.svg%40v=1.4.57" />
+    <Content Include="fonts\materialdesignicons-webfont.ttf%40v=1.4.57" />
+    <Content Include="fonts\materialdesignicons-webfont.woff%40v=1.4.57" />
+    <Content Include="fonts\materialdesignicons-webfont.woff2%40v=1.4.57" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.eot%40" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="panel\add_product_category.aspx" />
+    <Content Include="panel\add_service.aspx" />
+    <Content Include="panel\add_service_category.aspx" />
+    <Content Include="panel\delete_product_category.aspx" />
+    <Content Include="panel\delete_service_category.aspx" />
+    <Content Include="panel\edit_product_category.aspx" />
+    <Content Include="panel\edit_service_category.aspx" />
+    <Content Include="panel\fragments\Scripts.ascx" />
+    <Content Include="panel\fragments\Styles.ascx" />
+    <Content Include="panel\orders.aspx" />
+    <Content Include="panel\orders_service.aspx" />
+    <Content Include="panel\person_view.aspx" />
+    <Content Include="panel\service_category.aspx" />
+    <Content Include="panel\product_category.aspx" />
+    <Content Include="panel\services.aspx" />
+    <Content Include="panel\delete_product.aspx" />
+    <Content Include="panel\delete_service.aspx" />
+    <Content Include="panel\edit_product.aspx" />
+    <Content Include="panel\edit_service.aspx" />
+    <Content Include="panel\products.aspx" />
+    <Content Include="panel\delete_objective.aspx" />
+    <Content Include="panel\message_draft.aspx" />
+    <Content Include="panel\delete_message.aspx" />
+    <Content Include="panel\edit_user.aspx" />
+    <Content Include="panel\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="panel\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot%40" />
+    <Content Include="panel\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="panel\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="panel\assets\plugins\fontawesome\fonts\fontawesome-webfont.eot%40" />
+    <Content Include="panel\assets\plugins\fontawesome\fonts\fontawesome-webfont.eot%40v=4.3.0" />
+    <Content Include="panel\assets\plugins\fontawesome\fonts\fontawesome-webfont.svg%40v=4.3.0" />
+    <Content Include="panel\assets\plugins\fontawesome\fonts\fontawesome-webfont.ttf%40v=4.3.0" />
+    <Content Include="panel\assets\plugins\fontawesome\fonts\fontawesome-webfont.woff%40v=4.3.0" />
+    <Content Include="panel\assets\plugins\line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="panel\assets\plugins\line-icons\fonts\Simple-Line-Icons.eot%40" />
+    <Content Include="panel\assets\plugins\line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="panel\assets\plugins\line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="panel\assets\plugins\weather-icons-master\font\weathericons-regular-webfont.eot" />
+    <Content Include="panel\assets\plugins\weather-icons-master\font\weathericons-regular-webfont.eot%40" />
+    <Content Include="panel\assets\plugins\weather-icons-master\font\weathericons-regular-webfont.ttf" />
+    <Content Include="panel\assets\plugins\weather-icons-master\font\weathericons-regular-webfont.woff" />
+    <None Include="Properties\PublishProfiles\1.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="contact.aspx" />
+    <Content Include="css\style.css" />
+    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\header-6.jpg" />
+    <Content Include="images\image-4.jpg" />
+    <Content Include="images\index_img1.jpg" />
+    <Content Include="images\index_img5.jpg" />
+    <Content Include="images\index_img6.jpg" />
+    <Content Include="images\index_img7.jpg" />
+    <Content Include="images\news\news1.jpg" />
+    <Content Include="index.aspx" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\core.min.js" />
+    <Content Include="js\script.js" />
+    <Content Include="login.aspx" />
+    <Content Include="news.aspx" />
+    <Content Include="panel\assets\css\modern.min.css" />
+    <Content Include="panel\assets\images\avatar1.png" />
+    <Content Include="panel\assets\images\avatar2.png" />
+    <Content Include="panel\assets\images\avatar3.png" />
+    <Content Include="panel\assets\images\avatar4.png" />
+    <Content Include="panel\assets\images\avatar5.png" />
+    <Content Include="panel\assets\images\crop.jpg" />
+    <Content Include="panel\assets\images\post-image.jpg" />
+    <Content Include="panel\assets\images\profile-cover.png" />
+    <Content Include="panel\assets\images\profile-menu-image.png" />
+    <Content Include="panel\assets\images\profile-picture.png" />
+    <Content Include="panel\assets\images\signature.png" />
+    <Content Include="panel\assets\js\modern.js" />
+    <Content Include="panel\assets\js\modern.min.js" />
+    <Content Include="panel\assets\js\pages\calendar.js" />
+    <Content Include="panel\assets\js\pages\charts-chartjs.js" />
+    <Content Include="panel\assets\js\pages\charts-flot.js" />
+    <Content Include="panel\assets\js\pages\charts-morris.js" />
+    <Content Include="panel\assets\js\pages\charts-rickshaw.js" />
+    <Content Include="panel\assets\js\pages\charts-sparkline.js" />
+    <Content Include="panel\assets\js\pages\coming-soon.js" />
+    <Content Include="panel\assets\js\pages\compose.js" />
+    <Content Include="panel\assets\js\pages\contact.js" />
+    <Content Include="panel\assets\js\pages\dashboard.js" />
+    <Content Include="panel\assets\js\pages\form-elements.js" />
+    <Content Include="panel\assets\js\pages\form-image-crop.js" />
+    <Content Include="panel\assets\js\pages\form-image-zoom.js" />
+    <Content Include="panel\assets\js\pages\form-plupload.js" />
+    <Content Include="panel\assets\js\pages\form-select2.js" />
+    <Content Include="panel\assets\js\pages\form-wizard.js" />
+    <Content Include="panel\assets\js\pages\form-x-editable.js" />
+    <Content Include="panel\assets\js\pages\gallery.js" />
+    <Content Include="panel\assets\js\pages\inbox.js" />
+    <Content Include="panel\assets\js\pages\jstree.js" />
+    <Content Include="panel\assets\js\pages\maps-google.js" />
+    <Content Include="panel\assets\js\pages\maps-vector.js" />
+    <Content Include="panel\assets\js\pages\nestable.js" />
+    <Content Include="panel\assets\js\pages\notifications.js" />
+    <Content Include="panel\assets\js\pages\profile.js" />
+    <Content Include="panel\assets\js\pages\table-data.js" />
+    <Content Include="panel\assets\js\pages\timeline.js" />
+    <Content Include="panel\assets\js\pages\todo.js" />
+    <Content Include="panel\assets\js\pages\ui-sliders.js" />
+    <Content Include="panel\assets\plugins\3d-bold-navigation\css\style.css" />
+    <Content Include="panel\assets\plugins\3d-bold-navigation\js\main.js" />
+    <Content Include="panel\assets\plugins\3d-bold-navigation\js\modernizr.js" />
+    <Content Include="panel\assets\plugins\bootstrap-colorpicker\css\colorpicker.css" />
+    <Content Include="panel\assets\plugins\bootstrap-colorpicker\img\alpha.png" />
+    <Content Include="panel\assets\plugins\bootstrap-colorpicker\img\hue.png" />
+    <Content Include="panel\assets\plugins\bootstrap-colorpicker\img\saturation.png" />
+    <Content Include="panel\assets\plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="panel\assets\plugins\bootstrap-datepicker\css\datepicker3.css" />
+    <Content Include="panel\assets\plugins\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="panel\assets\plugins\bootstrap-datetimepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="panel\assets\plugins\bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="panel\assets\plugins\bootstrap-tagsinput\bootstrap-tagsinput.css" />
+    <Content Include="panel\assets\plugins\bootstrap-tagsinput\bootstrap-tagsinput.min.js" />
+    <Content Include="panel\assets\plugins\bootstrap-timepicker\css\bootstrap-timepicker.min.css" />
+    <Content Include="panel\assets\plugins\bootstrap-timepicker\js\bootstrap-timepicker.min.js" />
+    <Content Include="panel\assets\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="panel\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="panel\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2.html" />
+    <Content Include="panel\assets\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="panel\assets\plugins\chartsjs\Chart.min.js" />
+    <Content Include="panel\assets\plugins\classie\classie.js" />
+    <Content Include="panel\assets\plugins\curvedlines\curvedLines.js" />
+    <Content Include="panel\assets\plugins\d3\d3.layout.min.js" />
+    <Content Include="panel\assets\plugins\d3\d3.min.js" />
+    <Content Include="panel\assets\plugins\datatables\css\jquery.datatables.min.css" />
+    <Content Include="panel\assets\plugins\datatables\css\jquery.datatables_themeroller.css" />
+    <Content Include="panel\assets\plugins\datatables\images\sort_asc.png" />
+    <Content Include="panel\assets\plugins\datatables\images\sort_asc_disabled.png" />
+    <Content Include="panel\assets\plugins\datatables\images\sort_both.png" />
+    <Content Include="panel\assets\plugins\datatables\images\sort_desc.png" />
+    <Content Include="panel\assets\plugins\datatables\images\sort_desc_disabled.png" />
+    <Content Include="panel\assets\plugins\datatables\js\jquery.datatables.min.js" />
+    <Content Include="panel\assets\plugins\dropzone\dropzone.min.css" />
+    <Content Include="panel\assets\plugins\dropzone\dropzone.min.js" />
+    <Content Include="panel\assets\plugins\elevatezoom\jquery.elevatezoom-3.0.8.min.js" />
+    <Content Include="panel\assets\plugins\flot\jquery.flot.min.js" />
+    <Content Include="panel\assets\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="panel\assets\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="panel\assets\plugins\flot\jquery.flot.symbol.min.js" />
+    <Content Include="panel\assets\plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="panel\assets\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="panel\assets\plugins\fontawesome\css\font-awesome.css" />
+    <Content Include="panel\assets\plugins\fontawesome\fonts\fontawesome-webfont.woff2%40v=4.3.0.html" />
+    <Content Include="panel\assets\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="panel\assets\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="panel\assets\plugins\fullcalendar\lib\moment.min.js" />
+    <Content Include="panel\assets\plugins\gridgallery\css\component.css" />
+    <Content Include="panel\assets\plugins\gridgallery\js\cbpgridgallery.js" />
+    <Content Include="panel\assets\plugins\gridgallery\js\classie.js" />
+    <Content Include="panel\assets\plugins\gridgallery\js\imagesloaded.pkgd.min.js" />
+    <Content Include="panel\assets\plugins\gridgallery\js\masonry.pkgd.min.js" />
+    <Content Include="panel\assets\plugins\image-cropper\cropper.min.css" />
+    <Content Include="panel\assets\plugins\image-cropper\cropper.min.js" />
+    <Content Include="panel\assets\plugins\ion.rangeslider\css\ion.rangeSlider.css" />
+    <Content Include="panel\assets\plugins\ion.rangeslider\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="panel\assets\plugins\ion.rangeslider\img\sprite-skin-flat.png" />
+    <Content Include="panel\assets\plugins\ion.rangeslider\js\ion-rangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="panel\assets\plugins\jquery-blockui\jquery.blockui.js" />
+    <Content Include="panel\assets\plugins\jquery-countdown\jquery.countdown.min.js" />
+    <Content Include="panel\assets\plugins\jquery-counterup\jquery.counterup.min.js" />
+    <Content Include="panel\assets\plugins\jquery-mockjax-master\jquery.mockjax.js" />
+    <Content Include="panel\assets\plugins\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="panel\assets\plugins\jquery-sparkline\jquery.sparkline.min.js" />
+    <Content Include="panel\assets\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="panel\assets\plugins\jquery-validation\jquery.validate.min.js" />
+    <Content Include="panel\assets\plugins\jquery\jquery-2.1.4.min.js" />
+    <Content Include="panel\assets\plugins\jqvmap\data\jquery.vmap.sampledata.js" />
+    <Content Include="panel\assets\plugins\jqvmap\jquery.vmap.min.js" />
+    <Content Include="panel\assets\plugins\jqvmap\jqvmap.css" />
+    <Content Include="panel\assets\plugins\jqvmap\maps\jquery.vmap.world.js" />
+    <Content Include="panel\assets\plugins\jstree\jstree.min.js" />
+    <Content Include="panel\assets\plugins\jstree\themes\default\32px.png" />
+    <Content Include="panel\assets\plugins\jstree\themes\default\40px.png" />
+    <Content Include="panel\assets\plugins\jstree\themes\default\style.min.css" />
+    <Content Include="panel\assets\plugins\jstree\themes\default\throbber.gif" />
+    <Content Include="panel\assets\plugins\line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="panel\assets\plugins\line-icons\simple-line-icons.css" />
+    <Content Include="panel\assets\plugins\metrojs\images\metroIcons.jpg" />
+    <Content Include="panel\assets\plugins\metrojs\images\metroIcons_light.jpg" />
+    <Content Include="panel\assets\plugins\metrojs\MetroJs.min.css" />
+    <Content Include="panel\assets\plugins\metrojs\MetroJs.min.js" />
+    <Content Include="panel\assets\plugins\moment\moment.js" />
+    <Content Include="panel\assets\plugins\morris\morris.css" />
+    <Content Include="panel\assets\plugins\morris\morris.min.js" />
+    <Content Include="panel\assets\plugins\morris\raphael.min.js" />
+    <Content Include="panel\assets\plugins\nestable\jquery.nestable.js" />
+    <Content Include="panel\assets\plugins\nestable\nestable.css" />
+    <Content Include="panel\assets\plugins\plupload\js\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="panel\assets\plugins\plupload\js\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="panel\assets\plugins\plupload\js\jquery.plupload.queue\img\delete.gif" />
+    <Content Include="panel\assets\plugins\plupload\js\jquery.plupload.queue\img\done.gif" />
+    <Content Include="panel\assets\plugins\plupload\js\jquery.plupload.queue\img\error.gif" />
+    <Content Include="panel\assets\plugins\plupload\js\jquery.plupload.queue\jquery.plupload.queue.min.js" />
+    <Content Include="panel\assets\plugins\plupload\js\plupload.full.min.js" />
+    <Content Include="panel\assets\plugins\pricing-tables\css\style.css" />
+    <Content Include="panel\assets\plugins\pricing-tables\img\cd-icon-small-arrow.svg" />
+    <Content Include="panel\assets\plugins\pricing-tables\js\main.js" />
+    <Content Include="panel\assets\plugins\product-preview-slider\css\style.css" />
+    <Content Include="panel\assets\plugins\product-preview-slider\js\jquery.mobile.min.js" />
+    <Content Include="panel\assets\plugins\product-preview-slider\js\main.js" />
+    <Content Include="panel\assets\plugins\rickshaw\rickshaw.min.css" />
+    <Content Include="panel\assets\plugins\rickshaw\rickshaw.min.js" />
+    <Content Include="panel\assets\plugins\select2\css\select2.min.css" />
+    <Content Include="panel\assets\plugins\select2\js\select2.full.min.js" />
+    <Content Include="panel\assets\plugins\select2\js\select2.min.js" />
+    <Content Include="panel\assets\plugins\slidepushmenus\css\component.css" />
+    <Content Include="panel\assets\plugins\summernote-master\summernote.css" />
+    <Content Include="panel\assets\plugins\summernote-master\summernote.min.js" />
+    <Content Include="panel\assets\plugins\switchery\switchery.min.css" />
+    <Content Include="panel\assets\plugins\switchery\switchery.min.js" />
+    <Content Include="panel\assets\plugins\toastr\toastr.min.css" />
+    <Content Include="panel\assets\plugins\toastr\toastr.min.js" />
+    <Content Include="panel\assets\plugins\twitter-bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="panel\assets\plugins\uniform\css\uniform.default.min.css" />
+    <Content Include="panel\assets\plugins\uniform\images\bg-input-focus.png" />
+    <Content Include="panel\assets\plugins\uniform\images\bg-input.png" />
+    <Content Include="panel\assets\plugins\uniform\images\sprite.png" />
+    <Content Include="panel\assets\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="panel\assets\plugins\vertical-timeline\css\style.css" />
+    <Content Include="panel\assets\plugins\vertical-timeline\js\main.js" />
+    <Content Include="panel\assets\plugins\waves\waves.min.css" />
+    <Content Include="panel\assets\plugins\waves\waves.min.js" />
+    <Content Include="panel\assets\plugins\waypoints\jquery.waypoints.min.js" />
+    <Content Include="panel\assets\plugins\weather-icons-master\css\weather-icons.min.css" />
+    <Content Include="panel\assets\plugins\weather-icons-master\font\weathericons-regular-webfont.svg" />
+    <Content Include="panel\assets\plugins\x-editable\bootstrap3-editable\css\bootstrap-editable.css" />
+    <Content Include="panel\assets\plugins\x-editable\bootstrap3-editable\img\clear.png" />
+    <Content Include="panel\assets\plugins\x-editable\bootstrap3-editable\img\loading.gif" />
+    <Content Include="panel\assets\plugins\x-editable\bootstrap3-editable\js\bootstrap-editable.js" />
+    <Content Include="panel\assets\plugins\x-editable\inputs-ext\address\address.css" />
+    <Content Include="panel\assets\plugins\x-editable\inputs-ext\address\address.js" />
+    <Content Include="panel\assets\plugins\x-editable\inputs-ext\typeaheadjs\lib\typeahead.js" />
+    <Content Include="panel\assets\plugins\x-editable\inputs-ext\typeaheadjs\lib\typeahead.js-bootstrap.css" />
+    <Content Include="panel\assets\plugins\x-editable\inputs-ext\typeaheadjs\typeaheadjs.js" />
+    <Content Include="panel\delete_user.aspx" />
+    <Content Include="panel\index.aspx" />
+    <Content Include="panel\messages.aspx" />
+    <Content Include="panel\message_view.aspx" />
+    <Content Include="panel\new_message.aspx" />
+    <Content Include="panel\new_user.aspx" />
+    <Content Include="panel\objectives.aspx" />
+    <Content Include="panel\reports.aspx" />
+    <Content Include="panel\send_messages.aspx" />
+    <Content Include="panel\add_product.aspx" />
+    <Content Include="panel\users.aspx" />
+    <Content Include="price.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\DataBase.cs" />
+    <Compile Include="DataBase\Friends.cs" />
+    <Compile Include="DataBase\Helper.cs" />
+    <Compile Include="DataBase\Message.cs" />
+    <Compile Include="DataBase\Objectives.cs" />
+    <Compile Include="DataBase\ProductCategory.cs" />
+    <Compile Include="DataBase\ServiceCategory.cs" />
+    <Compile Include="DataBase\User.cs" />
+    <Compile Include="forgot_password.aspx.cs">
+      <DependentUpon>forgot_password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgot_password.aspx.designer.cs">
+      <DependentUpon>forgot_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="news.aspx.cs">
+      <DependentUpon>news.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="news.aspx.designer.cs">
+      <DependentUpon>news.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\add_product_category.aspx.cs">
+      <DependentUpon>add_product_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\add_product_category.aspx.designer.cs">
+      <DependentUpon>add_product_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\add_service.aspx.cs">
+      <DependentUpon>add_service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\add_service.aspx.designer.cs">
+      <DependentUpon>add_service.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\add_service_category.aspx.cs">
+      <DependentUpon>add_service_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\add_service_category.aspx.designer.cs">
+      <DependentUpon>add_service_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\delete_product_category.aspx.cs">
+      <DependentUpon>delete_product_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\delete_product_category.aspx.designer.cs">
+      <DependentUpon>delete_product_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\delete_service_category.aspx.cs">
+      <DependentUpon>delete_service_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\delete_service_category.aspx.designer.cs">
+      <DependentUpon>delete_service_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\edit_product_category.aspx.cs">
+      <DependentUpon>edit_product_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\edit_product_category.aspx.designer.cs">
+      <DependentUpon>edit_product_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\edit_service_category.aspx.cs">
+      <DependentUpon>edit_service_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\edit_service_category.aspx.designer.cs">
+      <DependentUpon>edit_service_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\fragments\Scripts.ascx.cs">
+      <DependentUpon>Scripts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\fragments\Scripts.ascx.designer.cs">
+      <DependentUpon>Scripts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\fragments\Styles.ascx.cs">
+      <DependentUpon>Styles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\fragments\Styles.ascx.designer.cs">
+      <DependentUpon>Styles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\orders.aspx.cs">
+      <DependentUpon>orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\orders.aspx.designer.cs">
+      <DependentUpon>orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\orders_service.aspx.cs">
+      <DependentUpon>orders_service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\orders_service.aspx.designer.cs">
+      <DependentUpon>orders_service.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\person_view.aspx.cs">
+      <DependentUpon>person_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\person_view.aspx.designer.cs">
+      <DependentUpon>person_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\service_category.aspx.cs">
+      <DependentUpon>service_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\service_category.aspx.designer.cs">
+      <DependentUpon>service_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\product_category.aspx.cs">
+      <DependentUpon>product_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\product_category.aspx.designer.cs">
+      <DependentUpon>product_category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\services.aspx.cs">
+      <DependentUpon>services.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\services.aspx.designer.cs">
+      <DependentUpon>services.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\delete_product.aspx.cs">
+      <DependentUpon>delete_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\delete_product.aspx.designer.cs">
+      <DependentUpon>delete_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\delete_service.aspx.cs">
+      <DependentUpon>delete_service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\delete_service.aspx.designer.cs">
+      <DependentUpon>delete_service.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\edit_product.aspx.cs">
+      <DependentUpon>edit_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\edit_product.aspx.designer.cs">
+      <DependentUpon>edit_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\edit_service.aspx.cs">
+      <DependentUpon>edit_service.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\edit_service.aspx.designer.cs">
+      <DependentUpon>edit_service.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\products.aspx.cs">
+      <DependentUpon>products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\products.aspx.designer.cs">
+      <DependentUpon>products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\delete_objective.aspx.cs">
+      <DependentUpon>delete_objective.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\delete_objective.aspx.designer.cs">
+      <DependentUpon>delete_objective.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\message_draft.aspx.cs">
+      <DependentUpon>message_draft.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\message_draft.aspx.designer.cs">
+      <DependentUpon>message_draft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\delete_message.aspx.cs">
+      <DependentUpon>delete_message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\delete_message.aspx.designer.cs">
+      <DependentUpon>delete_message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\edit_user.aspx.cs">
+      <DependentUpon>edit_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\edit_user.aspx.designer.cs">
+      <DependentUpon>edit_user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\delete_user.aspx.cs">
+      <DependentUpon>delete_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\delete_user.aspx.designer.cs">
+      <DependentUpon>delete_user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\messages.aspx.cs">
+      <DependentUpon>messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\messages.aspx.designer.cs">
+      <DependentUpon>messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\message_view.aspx.cs">
+      <DependentUpon>message_view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\message_view.aspx.designer.cs">
+      <DependentUpon>message_view.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\new_message.aspx.cs">
+      <DependentUpon>new_message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\new_message.aspx.designer.cs">
+      <DependentUpon>new_message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\new_user.aspx.cs">
+      <DependentUpon>new_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\new_user.aspx.designer.cs">
+      <DependentUpon>new_user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\objectives.aspx.cs">
+      <DependentUpon>objectives.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\objectives.aspx.designer.cs">
+      <DependentUpon>objectives.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\reports.aspx.cs">
+      <DependentUpon>reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\reports.aspx.designer.cs">
+      <DependentUpon>reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\send_messages.aspx.cs">
+      <DependentUpon>send_messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\send_messages.aspx.designer.cs">
+      <DependentUpon>send_messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\add_product.aspx.cs">
+      <DependentUpon>add_product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\add_product.aspx.designer.cs">
+      <DependentUpon>add_product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="panel\users.aspx.cs">
+      <DependentUpon>users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="panel\users.aspx.designer.cs">
+      <DependentUpon>users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="price.aspx.cs">
+      <DependentUpon>price.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="price.aspx.designer.cs">
+      <DependentUpon>price.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58621</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58621/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
